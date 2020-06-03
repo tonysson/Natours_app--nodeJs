@@ -233,7 +233,7 @@ exports.forgotPassword = catchAsync( async(req, res, next) => {
 
     try {
 
-       //3-Send mail
+       //3-Send mail to the client
        const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`
     
        await new Email(user, resetURL).sendPasswordReset()
