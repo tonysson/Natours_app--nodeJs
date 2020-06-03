@@ -147,13 +147,13 @@ userSchema.methods.createPasswordResetToken = function(){
         .update(resetToken)
         .digest('hex');
 
-    console.log({ resetToken }, this.passwordResetToken);
+    //console.log({ resetToken }, this.passwordResetToken);
     
     // on sauvegarde également la date d'expiration en BDD (10min)
     
     this.passwordResetExpires = Date.now() + 600000
 
-    console.log(this.passwordResetExpires);
+    //console.log(this.passwordResetExpires);
     
     
 

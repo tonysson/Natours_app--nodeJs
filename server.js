@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 process.on('uncaughtException', error => {
-   console.log(error);
+  //  console.log(error);
     process.exit(1);
 })
 
@@ -17,15 +17,14 @@ mongoose.connect(DB, {
   useCreateIndex:true,
   useFindAndModify:false
 }).then(result => {
-  // console.log(result.connections);
-  console.log('DB coonection succesfully'); 
+  console.log(result.connections);
+   console.log('DB coonection succesfully'); 
 })
 
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
-  console.log(`App running on port ${port}...`);
-
+   console.log(`App running on port ${port}...`);
 });
 
 /**
@@ -36,7 +35,7 @@ const server = app.listen(port, () => {
  */
 
  process.on('unhandledRejection', error => {
-   console.log(error);
+   //console.log(error);
    server.close(() => {
      process.exit(1)
    });
