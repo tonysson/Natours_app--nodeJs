@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 process.on('uncaughtException', error => {
-  //  console.log(error);
+   console.log(error);
     process.exit(1);
 })
 
@@ -35,7 +35,7 @@ const server = app.listen(port, () => {
  */
 
  process.on('unhandledRejection', error => {
-   //console.log(error);
+   console.log(error);
    server.close(() => {
      process.exit(1)
    });
